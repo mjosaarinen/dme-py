@@ -24,7 +24,7 @@ sm = D81C4D8D734FCBFBEADE3D3F8A039FAA2A2C9957E835AD55B22E75BF57BB556AC8..
 
 ##	Fast Inversion demo
 
-The multivariate candidate DME-Sign is provided in three versions, q in {2^32,2^48,2^48} for NIST security targets I, III, and V. In the following discussion, I will concentrate on the "32-bit" level I version. We will describe a 2^-96 complexity forgery attack on it.
+The multivariate candidate DME-Sign has three submitted parameter sets, q in {2^32,2^48,2^48} for NIST security targets I, III, and V. In the following discussion, I will concentrate on the "32-bit" level I version. We will describe a 2^-96 complexity forgery attack on it.
 
 DME-Sign is built on a "trapdoor function" (in the style of RSA); there is a secret mapping from 256 bits to 256 bits (used for creating signatures) and a matching public mapping which is its inverse (for verifying signatures).
 
