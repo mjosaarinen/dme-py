@@ -2,7 +2,7 @@
 
 2023-07-25  Markku-Juhani O. Saarinen  mjos@pqshield.com
 
-A DME-Sign (Level-1) implementation in Python and a PoC for a forgery attack. DME-Sign is a candidate algorithm in the (NIST Call for additional PQC Signatures)[https://csrc.nist.gov/Projects/pqc-dig-sig/round-1-additional-signatures].
+A DME-Sign (Level-1) implementation in Python and a PoC for a forgery attack. DME-Sign is a candidate algorithm in the [NIST Call for additional PQC Signatures](https://csrc.nist.gov/Projects/pqc-dig-sig/round-1-additional-signatures).
 
 ###	Testing the implementation
 
