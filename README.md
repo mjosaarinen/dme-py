@@ -85,7 +85,7 @@ Or forged signatures are of form [ s0, s1, 0, 0, s4, s5, s6, s7 ], with s[2] and
 
 1. We first select s[4..7] so that m[2..5] will have the desired value. The demo forces only m[2..3] and treats s[6..7] as constants -- thereby turning a bilinear equation into a linear one and allowing efficient solution. For this attack, we assume that with at most 2^96 offline effort (e.g., a table), we succeed in the 128-bit inversion with probability 2^-32.
 
-2. We then treat m[6..7] as constants. Now the equations for m[0..1] are linearized as a function of s[0..1] (just like in the demo) and can be solved easily. Changing s[s..1] does not affect the already solved m[2..5] target values.
+2. We can now treat s[4..7] (*corrected*) as constants. Now the equations for m[0..1] are linearized as a function of s[0..1] (just like in the demo) and can be solved easily. Changing s[s..1] does not affect the already solved m[2..5] target values.
 
 3. We have forced 192 bits to the target -- as much as one can hope with s[2] and s[3] set to zeros. Now we check for a match in m[6..7], which will occur with probability 2^-64. This gives the attack a total success probability of 2^-96, violating the Level-1 claims. There may be much better attacks (by solving the bilinear forms in step 1 algebraically, rather than by brute force)
 
