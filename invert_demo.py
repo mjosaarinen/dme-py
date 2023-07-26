@@ -13,29 +13,29 @@ def simple_pkey_map(self, pkey, sv):
     mv  =   [0] * 8
 
     #   words 0, 1
-    y       =   [0] * 8
-    y[0]    =   self.fq_pow2( sv[0], f[0] )
-    y[1]    =   self.fq_pow2( sv[1], f[0] )
-    y[4]    =   self.fq_pow2( sv[4], f[8] )
-    y[5]    =   self.fq_pow2( sv[5], f[8] )
-    y[6]    =   self.fq_pow2( sv[6], f[12] )
-    y[7]    =   self.fq_pow2( sv[7], f[12] )
+    t       =   [0] * 8
+    t[0]    =   self.fq_pow2( sv[0], f[0] )
+    t[1]    =   self.fq_pow2( sv[1], f[0] )
+    t[4]    =   self.fq_pow2( sv[4], f[8] )
+    t[5]    =   self.fq_pow2( sv[5], f[8] )
+    t[6]    =   self.fq_pow2( sv[6], f[12] )
+    t[7]    =   self.fq_pow2( sv[7], f[12] )
 
     c01     =   [0] * 65
-    c01[4]  =   self.fq_mono([ y[6], y[4], y[0] ])
-    c01[9]  =   self.fq_mono([ y[7], y[4], y[0] ])
-    c01[14] =   self.fq_mono([ y[6], y[5], y[0] ])
-    c01[19] =   self.fq_mono([ y[7], y[5], y[0] ])
-    c01[24] =   self.fq_mono([ y[0] ])
-    c01[27] =   self.fq_mono([ y[6], y[4], y[1] ])
-    c01[30] =   self.fq_mono([ y[7], y[4], y[1] ])
-    c01[33] =   self.fq_mono([ y[6], y[5], y[1] ])
-    c01[36] =   self.fq_mono([ y[7], y[5], y[1] ])
-    c01[39] =   self.fq_mono([ y[1] ])
-    c01[44] =   self.fq_mono([ y[6], y[4] ])
-    c01[49] =   self.fq_mono([ y[7], y[4] ])
-    c01[54] =   self.fq_mono([ y[6], y[5] ])
-    c01[59] =   self.fq_mono([ y[7], y[5] ])
+    c01[4]  =   self.fq_mono([ t[6], t[4], t[0] ])
+    c01[9]  =   self.fq_mono([ t[7], t[4], t[0] ])
+    c01[14] =   self.fq_mono([ t[6], t[5], t[0] ])
+    c01[19] =   self.fq_mono([ t[7], t[5], t[0] ])
+    c01[24] =   self.fq_mono([ t[0] ])
+    c01[27] =   self.fq_mono([ t[6], t[4], t[1] ])
+    c01[30] =   self.fq_mono([ t[7], t[4], t[1] ])
+    c01[33] =   self.fq_mono([ t[6], t[5], t[1] ])
+    c01[36] =   self.fq_mono([ t[7], t[5], t[1] ])
+    c01[39] =   self.fq_mono([ t[1] ])
+    c01[44] =   self.fq_mono([ t[6], t[4] ])
+    c01[49] =   self.fq_mono([ t[7], t[4] ])
+    c01[54] =   self.fq_mono([ t[6], t[5] ])
+    c01[59] =   self.fq_mono([ t[7], t[5] ])
 
     mv[0]   =   p[0][64]
     mv[1]   =   p[1][64]
@@ -44,17 +44,17 @@ def simple_pkey_map(self, pkey, sv):
         mv[1]   ^=  self.fq_mul(c01[i], p[1][i])
 
     #   words 2, 3
-    y       =   [0] * 8
-    y[4]    =   self.fq_pow2( sv[4], f[9] )
-    y[5]    =   self.fq_pow2( sv[5], f[9] )
-    y[6]    =   self.fq_pow2( sv[6], f[13] )
-    y[7]    =   self.fq_pow2( sv[7], f[13] )
+    t       =   [0] * 8
+    t[4]    =   self.fq_pow2( sv[4], f[9] )
+    t[5]    =   self.fq_pow2( sv[5], f[9] )
+    t[6]    =   self.fq_pow2( sv[6], f[13] )
+    t[7]    =   self.fq_pow2( sv[7], f[13] )
 
     c23     =   [0] * 25
-    c23[20] =   self.fq_mono([ y[6], y[4] ])
-    c23[21] =   self.fq_mono([ y[7], y[4] ])
-    c23[22] =   self.fq_mono([ y[6], y[5] ])
-    c23[23] =   self.fq_mono([ y[7], y[5] ])
+    c23[20] =   self.fq_mono([ t[6], t[4] ])
+    c23[21] =   self.fq_mono([ t[7], t[4] ])
+    c23[22] =   self.fq_mono([ t[6], t[5] ])
+    c23[23] =   self.fq_mono([ t[7], t[5] ])
 
     mv[2]   =   p[2][24]
     mv[3]   =   p[3][24]
@@ -64,16 +64,16 @@ def simple_pkey_map(self, pkey, sv):
 
     #   words 4, 5
     y       =   [0] * 8
-    y[4]    =   self.fq_pow2( sv[4], f[10] )
-    y[5]    =   self.fq_pow2( sv[5], f[10] )
-    y[6]    =   self.fq_pow2( sv[6], f[14] )
-    y[7]    =   self.fq_pow2( sv[7], f[14] )
+    t[4]    =   self.fq_pow2( sv[4], f[10] )
+    t[5]    =   self.fq_pow2( sv[5], f[10] )
+    t[6]    =   self.fq_pow2( sv[6], f[14] )
+    t[7]    =   self.fq_pow2( sv[7], f[14] )
 
     c45     =   [0] * 25
-    c45[20] =   self.fq_mono([ y[6], y[4] ])
-    c45[21] =   self.fq_mono([ y[7], y[4] ])
-    c45[22] =   self.fq_mono([ y[6], y[5] ])
-    c45[23] =   self.fq_mono([ y[7], y[5] ])
+    c45[20] =   self.fq_mono([ t[6], t[4] ])
+    c45[21] =   self.fq_mono([ t[7], t[4] ])
+    c45[22] =   self.fq_mono([ t[6], t[5] ])
+    c45[23] =   self.fq_mono([ t[7], t[5] ])
 
     mv[4]   =   p[4][24]
     mv[5]   =   p[5][24]
@@ -82,26 +82,26 @@ def simple_pkey_map(self, pkey, sv):
         mv[5]   ^=  self.fq_mul(c45[i], p[5][i])
 
     #   words 6, 7
-    y       =   [0] * 8
-    y[4]    =   self.fq_pow2( sv[4], f[11] )
-    y[5]    =   self.fq_pow2( sv[5], f[11] )
-    y[6]    =   self.fq_pow2( sv[6], f[15] )
-    y[7]    =   self.fq_pow2( sv[7], f[15] )
-    z       =   [ self.fq_mul( x, x ) for x in  y ]
+    t       =   [0] * 8
+    t[4]    =   self.fq_pow2( sv[4], f[11] )
+    t[5]    =   self.fq_pow2( sv[5], f[11] )
+    t[6]    =   self.fq_pow2( sv[6], f[15] )
+    t[7]    =   self.fq_pow2( sv[7], f[15] )
+    tt      =   [ self.fq_mul( x, x ) for x in  y ]
 
     c67     =   [0] * 65
-    c67[52] =   self.fq_mono([ y[6], z[4] ])
-    c67[53] =   self.fq_mono([ y[7], z[4] ])
-    c67[54] =   self.fq_mono([ y[6], y[5], y[4] ])
-    c67[55] =   self.fq_mono([ y[7], y[5], y[4] ])
-    c67[56] =   self.fq_mono([ y[4] ])
-    c67[57] =   self.fq_mono([ y[6], z[5] ])
-    c67[58] =   self.fq_mono([ y[7], z[5] ])
-    c67[59] =   self.fq_mono([ y[5] ])
-    c67[60] =   self.fq_mono([ y[6], y[4] ])
-    c67[61] =   self.fq_mono([ y[7], y[4] ])
-    c67[62] =   self.fq_mono([ y[6], y[5] ])
-    c67[63] =   self.fq_mono([ y[7], y[5] ])
+    c67[52] =   self.fq_mono([ t[6], tt[4] ])
+    c67[53] =   self.fq_mono([ t[7], tt[4] ])
+    c67[54] =   self.fq_mono([ t[6], t[5], t[4] ])
+    c67[55] =   self.fq_mono([ t[7], t[5], t[4] ])
+    c67[56] =   self.fq_mono([ t[4] ])
+    c67[57] =   self.fq_mono([ t[6], tt[5] ])
+    c67[58] =   self.fq_mono([ t[7], tt[5] ])
+    c67[59] =   self.fq_mono([ t[5] ])
+    c67[60] =   self.fq_mono([ t[6], t[4] ])
+    c67[61] =   self.fq_mono([ t[7], t[4] ])
+    c67[62] =   self.fq_mono([ t[6], t[5] ])
+    c67[63] =   self.fq_mono([ t[7], t[5] ])
 
     mv[6]   =   p[6][64]
     mv[7]   =   p[7][64]
